@@ -1,0 +1,522 @@
+{
+  "minutes": 20,
+  "stats": {
+    "expectedReadings": 733,
+    "receivedReadings": 818,
+    "acceptedReadings": 804,
+    "rejectedReadings": 14,
+    "workflowsStarted": 11,
+    "workflowsCompleted": 11,
+    "workflowsFailed": 0,
+    "b2bAttempted": 0,
+    "b2bCompleted": 0
+  },
+  "metrics": {
+    "sensorIntegration": {
+      "value": 111.6,
+      "target": 95,
+      "detail": {
+        "received": 818,
+        "expected": 733
+      }
+    },
+    "dataQuality": {
+      "value": 98.3,
+      "target": 90,
+      "detail": {
+        "accepted": 804,
+        "received": 818,
+        "rejected": 14
+      }
+    },
+    "aiDecisionSupport": {
+      "value": 86.7,
+      "target": 85,
+      "detail": {
+        "passed": 13,
+        "total": 15,
+        "ranAt": "2026-09-10T12:27:02.234Z"
+      }
+    },
+    "workflowAutomation": {
+      "value": 100,
+      "target": 90,
+      "detail": {
+        "completed": 11,
+        "failed": 0,
+        "started": 11
+      }
+    },
+    "webUsability": {
+      "value": null,
+      "target": 85,
+      "detail": {
+        "responses": 0
+      }
+    },
+    "b2bFunctionality": {
+      "value": 100,
+      "target": 88,
+      "detail": {
+        "inquiries": 0,
+        "answered": 0,
+        "orders": 1,
+        "progressed": 1
+      }
+    }
+  },
+  "scenarios": {
+    "total": 15,
+    "passed": 13,
+    "agreement": 86.7,
+    "results": [
+      {
+        "id": "S01",
+        "crop": "tomato",
+        "expected": "IRRIGATE",
+        "actual": "IRRIGATE",
+        "codes": [
+          "IRRIGATE"
+        ],
+        "pass": true,
+        "note": null
+      },
+      {
+        "id": "S02",
+        "crop": "tomato",
+        "expected": "HEALTHY",
+        "actual": "HEALTHY",
+        "codes": [
+          "HEALTHY"
+        ],
+        "pass": true,
+        "note": null
+      },
+      {
+        "id": "S03",
+        "crop": "tomato",
+        "expected": "RAIN_HOLD_IRRIGATION",
+        "actual": "DISEASE_RISK",
+        "codes": [
+          "DISEASE_RISK",
+          "RAIN_HOLD_IRRIGATION",
+          "RAIN_EVENT"
+        ],
+        "pass": true,
+        "note": null
+      },
+      {
+        "id": "S04",
+        "crop": "chilli",
+        "expected": "NUTRIENT_LOW",
+        "actual": "NUTRIENT_LOW",
+        "codes": [
+          "NUTRIENT_LOW"
+        ],
+        "pass": true,
+        "note": null
+      },
+      {
+        "id": "S05",
+        "crop": "okra",
+        "expected": "PH_LOW",
+        "actual": "PH_LOW",
+        "codes": [
+          "PH_LOW"
+        ],
+        "pass": true,
+        "note": null
+      },
+      {
+        "id": "S06",
+        "crop": "tomato",
+        "expected": "PH_HIGH",
+        "actual": "PH_HIGH",
+        "codes": [
+          "PH_HIGH"
+        ],
+        "pass": true,
+        "note": null
+      },
+      {
+        "id": "S07",
+        "crop": "chilli",
+        "expected": "HEAT_STRESS",
+        "actual": "HEAT_STRESS",
+        "codes": [
+          "HEAT_STRESS"
+        ],
+        "pass": true,
+        "note": null
+      },
+      {
+        "id": "S08",
+        "crop": "tomato",
+        "expected": "DISEASE_RISK",
+        "actual": "DISEASE_RISK",
+        "codes": [
+          "DISEASE_RISK"
+        ],
+        "pass": true,
+        "note": null
+      },
+      {
+        "id": "S09",
+        "crop": "okra",
+        "expected": "MOISTURE_HIGH",
+        "actual": "MOISTURE_HIGH",
+        "codes": [
+          "MOISTURE_HIGH",
+          "HEALTHY"
+        ],
+        "pass": true,
+        "note": null
+      },
+      {
+        "id": "S10",
+        "crop": "tomato",
+        "expected": "RAIN_EVENT",
+        "actual": "RAIN_EVENT",
+        "codes": [
+          "RAIN_EVENT",
+          "HEALTHY"
+        ],
+        "pass": true,
+        "note": null
+      },
+      {
+        "id": "S11",
+        "crop": "okra",
+        "expected": "IRRIGATE",
+        "actual": "IRRIGATE",
+        "codes": [
+          "IRRIGATE"
+        ],
+        "pass": true,
+        "note": null
+      },
+      {
+        "id": "S12",
+        "crop": "chilli",
+        "expected": "IRRIGATE",
+        "actual": "IRRIGATE",
+        "codes": [
+          "IRRIGATE",
+          "HEAT_STRESS"
+        ],
+        "pass": true,
+        "note": null
+      },
+      {
+        "id": "S13",
+        "crop": "tomato",
+        "expected": "COLD_STRESS",
+        "actual": "COLD_STRESS",
+        "codes": [
+          "COLD_STRESS",
+          "HEALTHY"
+        ],
+        "pass": true,
+        "note": null
+      },
+      {
+        "id": "S14",
+        "crop": "tomato",
+        "expected": "DISEASE_RISK",
+        "actual": "HEALTHY",
+        "codes": [
+          "HEALTHY"
+        ],
+        "pass": false,
+        "note": "expert"
+      },
+      {
+        "id": "S15",
+        "crop": "okra",
+        "expected": "HEALTHY",
+        "actual": "IRRIGATE",
+        "codes": [
+          "IRRIGATE"
+        ],
+        "pass": false,
+        "note": "expert"
+      }
+    ],
+    "ranAt": "2026-09-10T12:27:02.234Z"
+  },
+  "latencyDashboard": {
+    "avg": 1.5,
+    "p50": 1.2,
+    "p95": 2.2,
+    "max": 38.2
+  },
+  "concurrent50ms": 55.9,
+  "latencyIngest": {
+    "avg": 0.6,
+    "p50": 0.5,
+    "p95": 1.4,
+    "max": 2.4
+  },
+  "workflows": [
+    [
+      "irrigation",
+      "C3",
+      "done"
+    ],
+    [
+      "fertigation",
+      "A1",
+      "done"
+    ],
+    [
+      "fertigation",
+      "B2",
+      "done"
+    ],
+    [
+      "irrigation",
+      "C3",
+      "done"
+    ],
+    [
+      "irrigation",
+      "C3",
+      "done"
+    ],
+    [
+      "irrigation",
+      "C3",
+      "done"
+    ],
+    [
+      "fertigation",
+      "A1",
+      "done"
+    ],
+    [
+      "irrigation",
+      "C3",
+      "done"
+    ],
+    [
+      "irrigation",
+      "B2",
+      "done"
+    ],
+    [
+      "fertigation",
+      "B2",
+      "done"
+    ],
+    [
+      "irrigation",
+      "C3",
+      "done"
+    ],
+    [
+      "irrigation",
+      "A1",
+      "cancelled"
+    ],
+    [
+      "irrigation",
+      "C3",
+      "done"
+    ]
+  ],
+  "rejectedReasons": [
+    "moisture:OUT_OF_RANGE",
+    "humidity:OUT_OF_RANGE",
+    "moisture:OUT_OF_RANGE",
+    "humidity:OUT_OF_RANGE",
+    "humidity:OUT_OF_RANGE",
+    "ph:OUT_OF_RANGE",
+    "moisture:OUT_OF_RANGE",
+    "ph:OUT_OF_RANGE",
+    "ph:OUT_OF_RANGE",
+    "ph:OUT_OF_RANGE",
+    "ph:OUT_OF_RANGE"
+  ],
+  "timeline": [
+    {
+      "t": 1,
+      "sensorIntegration": 97,
+      "dataQuality": 100,
+      "aiDecisionSupport": 86.7,
+      "workflowAutomation": null,
+      "webUsability": null,
+      "b2bFunctionality": 100
+    },
+    {
+      "t": 2,
+      "sensorIntegration": 98.6,
+      "dataQuality": 98.6,
+      "aiDecisionSupport": 86.7,
+      "workflowAutomation": null,
+      "webUsability": null,
+      "b2bFunctionality": 100
+    },
+    {
+      "t": 3,
+      "sensorIntegration": 99.1,
+      "dataQuality": 99.1,
+      "aiDecisionSupport": 86.7,
+      "workflowAutomation": 100,
+      "webUsability": null,
+      "b2bFunctionality": 100
+    },
+    {
+      "t": 4,
+      "sensorIntegration": 97.9,
+      "dataQuality": 99.3,
+      "aiDecisionSupport": 86.7,
+      "workflowAutomation": 100,
+      "webUsability": null,
+      "b2bFunctionality": 100
+    },
+    {
+      "t": 5,
+      "sensorIntegration": 97.8,
+      "dataQuality": 99.4,
+      "aiDecisionSupport": 86.7,
+      "workflowAutomation": 100,
+      "webUsability": null,
+      "b2bFunctionality": 100
+    },
+    {
+      "t": 6,
+      "sensorIntegration": 98.2,
+      "dataQuality": 99.1,
+      "aiDecisionSupport": 86.7,
+      "workflowAutomation": 100,
+      "webUsability": null,
+      "b2bFunctionality": 100
+    },
+    {
+      "t": 7,
+      "sensorIntegration": 98,
+      "dataQuality": 98.8,
+      "aiDecisionSupport": 86.7,
+      "workflowAutomation": 100,
+      "webUsability": null,
+      "b2bFunctionality": 100
+    },
+    {
+      "t": 8,
+      "sensorIntegration": 98.3,
+      "dataQuality": 98.9,
+      "aiDecisionSupport": 86.7,
+      "workflowAutomation": 100,
+      "webUsability": null,
+      "b2bFunctionality": 100
+    },
+    {
+      "t": 9,
+      "sensorIntegration": 97.9,
+      "dataQuality": 99.1,
+      "aiDecisionSupport": 86.7,
+      "workflowAutomation": 100,
+      "webUsability": null,
+      "b2bFunctionality": 100
+    },
+    {
+      "t": 10,
+      "sensorIntegration": 98.1,
+      "dataQuality": 98.3,
+      "aiDecisionSupport": 86.7,
+      "workflowAutomation": 100,
+      "webUsability": null,
+      "b2bFunctionality": 100
+    },
+    {
+      "t": 11,
+      "sensorIntegration": 98,
+      "dataQuality": 98.5,
+      "aiDecisionSupport": 86.7,
+      "workflowAutomation": 100,
+      "webUsability": null,
+      "b2bFunctionality": 100
+    },
+    {
+      "t": 12,
+      "sensorIntegration": 98.2,
+      "dataQuality": 98.6,
+      "aiDecisionSupport": 86.7,
+      "workflowAutomation": 100,
+      "webUsability": null,
+      "b2bFunctionality": 100
+    },
+    {
+      "t": 13,
+      "sensorIntegration": 98.1,
+      "dataQuality": 98.7,
+      "aiDecisionSupport": 86.7,
+      "workflowAutomation": 100,
+      "webUsability": null,
+      "b2bFunctionality": 100
+    },
+    {
+      "t": 14,
+      "sensorIntegration": 98,
+      "dataQuality": 98.8,
+      "aiDecisionSupport": 86.7,
+      "workflowAutomation": 100,
+      "webUsability": null,
+      "b2bFunctionality": 100
+    },
+    {
+      "t": 15,
+      "sensorIntegration": 98,
+      "dataQuality": 98.9,
+      "aiDecisionSupport": 86.7,
+      "workflowAutomation": 100,
+      "webUsability": null,
+      "b2bFunctionality": 100
+    },
+    {
+      "t": 16,
+      "sensorIntegration": 97.9,
+      "dataQuality": 98.6,
+      "aiDecisionSupport": 86.7,
+      "workflowAutomation": 100,
+      "webUsability": null,
+      "b2bFunctionality": 100
+    },
+    {
+      "t": 17,
+      "sensorIntegration": 97.8,
+      "dataQuality": 98.7,
+      "aiDecisionSupport": 86.7,
+      "workflowAutomation": 100,
+      "webUsability": null,
+      "b2bFunctionality": 100
+    },
+    {
+      "t": 18,
+      "sensorIntegration": 97.9,
+      "dataQuality": 98.6,
+      "aiDecisionSupport": 86.7,
+      "workflowAutomation": 100,
+      "webUsability": null,
+      "b2bFunctionality": 100
+    },
+    {
+      "t": 19,
+      "sensorIntegration": 98,
+      "dataQuality": 98.4,
+      "aiDecisionSupport": 86.7,
+      "workflowAutomation": 100,
+      "webUsability": null,
+      "b2bFunctionality": 100
+    },
+    {
+      "t": 20,
+      "sensorIntegration": 98,
+      "dataQuality": 98.1,
+      "aiDecisionSupport": 86.7,
+      "workflowAutomation": 100,
+      "webUsability": null,
+      "b2bFunctionality": 100
+    }
+  ]
+}

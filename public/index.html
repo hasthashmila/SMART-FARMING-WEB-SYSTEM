@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AgriPulse · Smart Farming Web System</title>
+<meta name="description" content="Integrated smart-farming platform: IoT monitoring, explainable AI decision support, digital twin and B2B export marketplace. Available in English, Sinhala and Tamil.">
+<meta name="theme-color" content="#123b31">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Sinhala:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=3.0.1">
+</head>
+<body>
+<noscript><p class="noscript">AgriPulse needs JavaScript enabled. · AgriPulse සඳහා JavaScript සක්‍රීය කළ යුතුය. · AgriPulse-க்கு JavaScript தேவை.</p></noscript>
+
+<div id="app" class="app" hidden>
+  <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+    <a class="brand" href="#/dashboard"><span class="brand-mark" aria-hidden="true">✦</span><span class="brand-text">Agri<span>Pulse</span><small data-i18n="brand.tagline"></small></span></a>
+    <nav id="nav" class="nav"></nav>
+    <div class="sidebar-foot">
+      <div class="net" id="netStatus"><span class="pulse" aria-hidden="true"></span><span><b data-i18n="sidebar.network"></b><small id="netDetail"></small></span></div>
+      <p>© 2026 AgriPulse · <span data-i18n="brand.university"></span></p>
+    </div>
+  </aside>
+  <div class="backdrop" id="backdrop"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menuToggle" aria-label="Menu">☰</button>
+      <div class="title"><p class="eyebrow" id="greeting"></p><h1 id="pageTitle"></h1></div>
+      <div class="actions">
+        <span class="live" id="liveBadge" data-state="connecting"><i aria-hidden="true"></i><span data-i18n="header.live"></span></span>
+        <label class="lang"><span class="sr-only" data-i18n="header.language"></span>
+          <select id="langSelect" aria-label="Language"><option value="en">English</option><option value="si">සිංහල</option><option value="ta">தமிழ்</option></select>
+        </label>
+        <div class="dropdown">
+          <button class="icon-btn" id="alertsBtn" aria-haspopup="true" aria-expanded="false"><span aria-hidden="true">🔔</span><em id="alertCount" hidden></em><span class="sr-only" data-i18n="header.alerts"></span></button>
+          <div class="menu alerts-menu" id="alertsMenu" hidden></div>
+        </div>
+        <div class="dropdown">
+          <button class="avatar" id="profileBtn" aria-haspopup="true" aria-expanded="false"></button>
+          <div class="menu profile-menu" id="profileMenu" hidden></div>
+        </div>
+      </div>
+    </header>
+    <main id="view" class="view" tabindex="-1"></main>
+  </div>
+</div>
+
+<div id="auth" class="auth" hidden>
+  <div class="auth-panel">
+    <div class="auth-side">
+      <div class="brand light"><span class="brand-mark" aria-hidden="true">✦</span><span class="brand-text">Agri<span>Pulse</span><small data-i18n="brand.tagline"></small></span></div>
+      <h2 data-i18n="auth.heroTitle"></h2>
+      <p data-i18n="auth.heroText"></p>
+      <ul class="auth-points">
+        <li><b>◒</b><span data-i18n="auth.point1"></span></li>
+        <li><b>✦</b><span data-i18n="auth.point2"></span></li>
+        <li><b>◉</b><span data-i18n="auth.point3"></span></li>
+        <li><b>▣</b><span data-i18n="auth.point4"></span></li>
+      </ul>
+      <p class="auth-foot" data-i18n="auth.footer"></p>
+    </div>
+    <div class="auth-card">
+      <div class="auth-lang"><select id="authLang" aria-label="Language"><option value="en">English</option><option value="si">සිංහල</option><option value="ta">தமிழ்</option></select></div>
+      <h2 id="authTitle"></h2>
+      <p id="authSubtitle" class="muted"></p>
+      <form id="authForm" novalidate>
+        <div id="registerFields" hidden>
+          <label><span data-i18n="auth.fullName"></span><input id="authName" autocomplete="name" maxlength="80"></label>
+          <div class="row">
+            <label><span data-i18n="auth.role"></span><select id="authRole"><option value="farmer" data-i18n="role.farmer"></option><option value="buyer" data-i18n="role.buyer"></option></select></label>
+            <label><span data-i18n="auth.company"></span><input id="authCompany" autocomplete="organization" maxlength="80"></label>
+          </div>
+        </div>
+        <label><span data-i18n="auth.email"></span><input id="authEmail" type="email" autocomplete="email" required inputmode="email"></label>
+        <label><span data-i18n="auth.password"></span><div class="pw"><input id="authPassword" type="password" autocomplete="current-password" required minlength="8"><button type="button" class="pw-toggle" id="pwToggle" aria-label="Show password">👁</button></div></label>
+        <p class="form-error" id="authError" role="alert"></p>
+        <button class="btn primary full" id="authSubmit" type="submit"></button>
+      </form>
+      <button class="link-btn" id="authSwitch"></button>
+      <div class="demo"><p data-i18n="auth.demoTitle"></p>
+        <button type="button" class="demo-btn" data-demo="farmer"><b data-i18n="role.farmer"></b><span>farmer@agripulse.lk · Farm@123</span></button>
+        <button type="button" class="demo-btn" data-demo="buyer"><b data-i18n="role.buyer"></b><span>buyer@agripulse.lk · Buyer@123</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<dialog id="dialog" class="dialog"></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="i18n.js?v=3.0.1"></script>
+<script src="app.js?v=3.0.1"></script>
+</body>
+</html>

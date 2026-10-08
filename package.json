@@ -1,0 +1,15 @@
+{
+  "name": "agripulse-smart-farming-web-system",
+  "version": "3.0.0",
+  "private": true,
+  "description": "AgriPulse — Smart Farming Web System: IoT monitoring, explainable AI-agent decision support, digital twin and B2B export marketplace. English · Sinhala · Tamil.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test test/",
+    "reset": "node -e \"require('fs').rmSync(require('path').join(process.env.DATA_DIR||'data','db.json'),{force:true});console.log('Database reset. It will be reseeded on next start.')\""
+  },
+  "engines": { "node": ">=18" },
+  "license": "MIT"
+}
