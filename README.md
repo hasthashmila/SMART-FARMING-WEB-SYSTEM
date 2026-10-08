@@ -39,6 +39,10 @@ docker build -t agripulse .
 docker run -p 3000:3000 -v agripulse-data:/data agripulse
 ```
 
+**Render (free demo)**
+
+The repository includes a Render Blueprint. Open <https://dashboard.render.com/blueprint/new?repo=https://github.com/hasthashmila/SMART-FARMING-WEB-SYSTEM>, sign in, connect the GitHub repository, and deploy the Blueprint. The free service uses temporary storage, so its demo database can reset when Render restarts or redeploys the service. Use a paid instance with a persistent disk for data that must be retained.
+
 **Any Node host (Render, Railway, Fly.io, a VPS with PM2/systemd)** — start command `node server.js`, set `PORT`, mount a persistent directory and point `DATA_DIR` at it, and set `SECURE_COOKIES=true` behind HTTPS. See `.env.example`.
 
 ## Connect real sensor nodes
